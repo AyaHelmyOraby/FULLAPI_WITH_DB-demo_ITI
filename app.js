@@ -11,6 +11,9 @@ console.log("Test");
     await controller.getProducts(); // Read
     await controller.updateProduct("653a1b0f2b5eaf001fa62cdd", { price: 1100 }); // Update
     await controller.deleteProduct("653a1b0f2b5eaf001fa62cdd"); // Delete
+    await controller.getProductById("67be2e3abb9724ca6bed56e0"); // Replace with a real ID
 
-    await controller.disconnect(); // Disconnect from database
+
+   
+    
 })();
