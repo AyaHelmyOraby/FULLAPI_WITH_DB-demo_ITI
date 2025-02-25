@@ -61,6 +61,19 @@ class ProductController {
             console.error("Invalid ID format:", error.message);
         }
     }
+
+    async getProductById(id) {
+        try {
+            const collection = this.db.collection("products"); // Select collection
+            const objectId = new ObjectId(id); // Convert string ID to ObjectId
+            const product = await collection.findOne({ _id: objectId }); // Find document by ID
+            console.log("Product found:", product);
+            return product;
+        } catch (error) {
+            console.error("Invalid ID format:", error.message);
+        }
+    }
+    
 }
 
 module.exports = ProductController; // Export class
